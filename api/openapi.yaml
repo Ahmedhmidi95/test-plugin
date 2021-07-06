@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  description: This is a simple API
+  title: Simple BookStore API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /RESOURCE/{paramName}:
+    get:
+      operationId: addPet
+      parameters:
+      - description: description
+        explode: false
+        in: path
+        name: paramName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: created successfully
+        "404":
+          description: error while getting pet
+      x-eov-operation-handler: controllers/DefaultController
+components:
+  schemas: {}
